@@ -1,57 +1,112 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Snowflake from "../components/Snowflake.astro";
 ---
 
 <Layout title="HOHOHOH HAPPYMERRYY!!!">
-	<div class="card-wrapper">
-		<Card number="1" />
-		<Card number="2" />
-		<Card number="3" />
-		<Card number="4" />
-		<Card number="5" />
-		<Card number="6" />
-		<Card number="7" />
-		<Card number="8" />
-		<Card number="9" />
-		<Card number="10" />
-		<Card number="11" />
-		<Card number="12" />
-		<Card number="13" />
-		<Card number="14" />
-		<Card number="15" />
-		<Card number="16" />
-		<Card number="17" />
-		<Card number="18" />
-		<Card number="19" />
-		<Card number="20" />
-		<Card number="21" />
-		<Card number="22" />
-		<Card number="23" />
-		<Card number="24" />
-	</div>
+	<audio controls autoplay loop>
+  		<source src="./audio/songs.mp3" type="audio/mpeg">
+	</audio>
+
+  <div class="snow-wrapper">
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+    <Snowflake />
+  </div>
+
+  <div class="card-wrapper">
+    <Card number="1" content="Klappa katten" />
+    <Card number="2" content="Klappa katten" />
+    <Card number="3" content="Klappa katten" />
+    <Card number="4" content="Klappa katten" />
+    <Card number="5" content="Klappa katten" />
+    <Card number="6" content="Klappa katten" />
+    <Card number="7" content="Klappa katten" />
+    <Card number="8" content="Klappa katten" />
+    <Card number="9" content="Klappa katten" />
+    <Card number="10" content="Klappa katten" />
+    <Card number="11" content="Klappa katten" />
+    <Card number="12" content="Klappa katten" />
+    <Card number="13" content="Klappa katten" />
+    <Card number="14" content="Klappa katten" />
+    <Card number="15" content="Klappa katten" />
+    <Card number="16" content="Klappa katten" />
+    <Card number="17" content="Klappa katten" />
+    <Card number="18" content="Klappa katten" />
+    <Card number="19" content="Klappa katten" />
+    <Card number="20" content="Klappa katten" />
+    <Card number="21" content="Klappa katten" />
+    <Card number="22" content="Klappa katten" />
+    <Card number="23" content="Klappa katten" />
+    <Card number="24" content="Klappa katten" />
+  </div>
 </Layout>
 
 <style>
-	.card-wrapper {
-		position: relative;
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(max(180px, calc(15% - 20px)), 1fr));
-		gap: 20px;
-		padding: 40px;
-		border-radius: 4px;
-		background-image: url(./images/cat_bg.jpg);
-		width: 100%;
-		max-width: min( 1200px ,80vw);
-	}
+  .card-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(max(180px, calc(15% - 20px)), 1fr)
+    );
+    gap: 20px;
+    padding: 40px;
+    border-radius: 4px;
+    background-image: url(./images/cat_bg.jpg);
+    width: 100%;
+    max-width: min(1200px, 80vw);
+    box-shadow:
+      0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+      0 12.5px 10px rgba(0, 0, 0, 0.06),
+      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+      0 100px 80px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+  }
 
-	.card-wrapper:after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0,0,0,0.15);
-	}
+  .card-wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+  }
 </style>
