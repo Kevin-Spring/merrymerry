@@ -5,9 +5,9 @@ import Snowflake from "../components/Snowflake.astro";
 ---
 
 <Layout title="HOHOHOH HAPPYMERRYY!!!">
-	<audio controls autoplay loop>
+	<!-- <audio id="audio" controls autoplay loop>
   		<source src="./audio/songs.mp3" type="audio/mpeg">
-	</audio>
+	</audio> -->
 
   <div class="snow-wrapper">
     <Snowflake />
@@ -49,30 +49,30 @@ import Snowflake from "../components/Snowflake.astro";
   </div>
 
   <div class="card-wrapper">
-    <Card number="1" content="Klappa katten" />
-    <Card number="2" content="Klappa katten" />
-    <Card number="3" content="Klappa katten" />
-    <Card number="4" content="Klappa katten" />
-    <Card number="5" content="Klappa katten" />
-    <Card number="6" content="Klappa katten" />
-    <Card number="7" content="Klappa katten" />
-    <Card number="8" content="Klappa katten" />
-    <Card number="9" content="Klappa katten" />
-    <Card number="10" content="Klappa katten" />
-    <Card number="11" content="Klappa katten" />
-    <Card number="12" content="Klappa katten" />
-    <Card number="13" content="Klappa katten" />
-    <Card number="14" content="Klappa katten" />
-    <Card number="15" content="Klappa katten" />
-    <Card number="16" content="Klappa katten" />
-    <Card number="17" content="Klappa katten" />
-    <Card number="18" content="Klappa katten" />
-    <Card number="19" content="Klappa katten" />
-    <Card number="20" content="Klappa katten" />
-    <Card number="21" content="Klappa katten" />
-    <Card number="22" content="Klappa katten" />
-    <Card number="23" content="Klappa katten" />
-    <Card number="24" content="Klappa katten" />
+    <Card number="1" content="Köp en gran med boba 🌲🌲🌲" />
+    <Card number="2" content="Baka en valfri julbak 🍪🍪🍪" />
+    <Card number="3" content="Be boba laga en valfri maträtt till middag 🍽️🍽️🍽️" />
+    <Card number="4" content="Ge Tiny en julklapp 🎁🎁🎁" />
+    <Card number="5" content="Se ett avsnitt av julkalendern ☃️☃️☃️" />
+    <Card number="6" content="Nå rätt datum på adventsljuset 🕯️🕯️🕯️" />
+    <Card number="7" content="Ta en chokladbit 🍫🍫🍫" />
+    <Card number="8" content="Ge Flubb en julklapp 🎁🎁🎁" />
+    <Card number="9" content="Leta rätt på en julmarknad 🦌🦌🦌" />
+    <Card number="10" content="Få frukost på sängen 🍳🍳🍳" />
+    <Card number="11" content="Dansa små grodorna med Tiny 🐸🐸🐸" />
+    <Card number="12" content="Klä granen med en egen virkad utsmyckelse 🎄🎄🎄" />
+    <Card number="13" content="Se ett luciatåg 🧝‍♀️🧝‍♀️🧝‍♀️" />
+    <Card number="14" content="Pussa boba 💏💏💏" />
+    <Card number="15" content="Klä ut dig till tomte (extrapoäng för att ta ett möte i den) 🎅🎅🎅" />
+    <Card number="16" content="Gör en julig drink 🍹🍹🍹" />
+    <Card number="17" content="Grilla korv utomhus ❄️❄️❄️" />
+    <Card number="18" content="Virka eller gör en julstrumpa med valfri metod 🧦🧦🧦" />
+    <Card number="19" content="Ta en kopp glögg ☕☕☕" />
+    <Card number="20" content="Julpyssla med boba 🎁🎁🎁" />
+    <Card number="21" content="Gör varm choklad ☕☕☕" />
+    <Card number="22" content="Se en julfilm 🎞️🎞️🎞️" />
+    <Card number="23" content="TITTA I GRANEN 🌲🌲🌲" />
+    <Card number="24" content="TITTA I JULSTRUMPAN 🧦🧦🧦" />
   </div>
 </Layout>
 
@@ -116,3 +116,11 @@ import Snowflake from "../components/Snowflake.astro";
     background: rgba(0, 0, 0, 0.2);
   }
 </style>
+<script>
+  //document.addEventListener('mouseover', musicPlay);
+  
+  function musicPlay() {
+    document.getElementById('audio').play();
+    document.removeEventListener('click', musicPlay);
+  }
+</script>
