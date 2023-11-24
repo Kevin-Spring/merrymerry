@@ -1,4 +1,5 @@
 ---
+import { string } from 'astro/zod';
 interface Props {
   number: string;
   content: string;
@@ -7,7 +8,7 @@ interface Props {
 const { number, content } = Astro.props;
 ---
 
-<christmas-card class="card" id={number}>
+<christmas-card class="card" id={number} data-number={number}>
   <div class="front">
     <h2 class="card-title">
       {number}
@@ -75,18 +76,36 @@ const { number, content } = Astro.props;
     background-color: #044204;
   }
 
+  .card[data-number="24"] {
+    box-shadow: 0px 0px 14px 10px red;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0px 0px 14px 10px red;
+    }
+    to {
+      box-shadow: 0px 0px 2px 2px #044204;
+    }
+  }
+
   .card .card-title {
-	z-index: 2;
-	color: #fff;
+    z-index: 2;
+    color: #fff;
     margin: 0;
     font-size: 4rem;    
-	text-shadow: 1px 1px 2px #000;
+    text-shadow: 2px 1px 1px red;
   }
 
   .card .card-content {
     text-align: center;
     padding: 1rem;
     text-wrap: balance;
+    overflow-wrap: break-word;
+    max-height: 100%;
+    overflow: scroll;
+    color: #044204;
   }
 
   .card.opened {

@@ -5,37 +5,11 @@ import Snowflake from "../components/Snowflake.astro";
 ---
 
 <Layout title="HOHOHOH HAPPYMERRYY!!!">
-	<!-- <audio id="audio" controls autoplay loop>
+	<audio id="audio" controls autoplay loop>
   		<source src="./audio/songs.mp3" type="audio/mpeg">
-	</audio> -->
+	</audio>
 
   <div class="snow-wrapper">
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
     <Snowflake />
     <Snowflake />
     <Snowflake />
@@ -49,38 +23,47 @@ import Snowflake from "../components/Snowflake.astro";
   </div>
 
   <div class="card-wrapper">
-    <Card number="1" content="Köp en gran med boba 🌲🌲🌲" />
-    <Card number="2" content="Baka en valfri julbak 🍪🍪🍪" />
-    <Card number="3" content="Be boba laga en valfri maträtt till middag 🍽️🍽️🍽️" />
-    <Card number="4" content="Ge Tiny en julklapp 🎁🎁🎁" />
-    <Card number="5" content="Se ett avsnitt av julkalendern ☃️☃️☃️" />
-    <Card number="6" content="Nå rätt datum på adventsljuset 🕯️🕯️🕯️" />
-    <Card number="7" content="Ta en chokladbit 🍫🍫🍫" />
-    <Card number="8" content="Ge Flubb en julklapp 🎁🎁🎁" />
-    <Card number="9" content="Leta rätt på en julmarknad 🦌🦌🦌" />
-    <Card number="10" content="Få frukost på sängen 🍳🍳🍳" />
-    <Card number="11" content="Dansa små grodorna med Tiny 🐸🐸🐸" />
-    <Card number="12" content="Klä granen med en egen virkad utsmyckelse 🎄🎄🎄" />
-    <Card number="13" content="Se ett luciatåg 🧝‍♀️🧝‍♀️🧝‍♀️" />
-    <Card number="14" content="Pussa boba 💏💏💏" />
-    <Card number="15" content="Klä ut dig till tomte (extrapoäng för att ta ett möte i den) 🎅🎅🎅" />
+    <Card number="7" content="Ge Flubb en julklapp 🎁🎁🎁" />
     <Card number="16" content="Gör en julig drink 🍹🍹🍹" />
-    <Card number="17" content="Grilla korv utomhus ❄️❄️❄️" />
+    <Card number="5" content="Pussa boba 💏💏💏 " />
+    <Card number="10" content="Få frukost på sängen 🍳🍳🍳" />
     <Card number="18" content="Virka eller gör en julstrumpa med valfri metod 🧦🧦🧦" />
-    <Card number="19" content="Ta en kopp glögg ☕☕☕" />
-    <Card number="20" content="Julpyssla med boba 🎁🎁🎁" />
-    <Card number="21" content="Gör varm choklad ☕☕☕" />
+    <Card number="4" content="Nå rätt datum på adventsljuset 🕯️🕯️🕯️" />
+    <Card number="12" content="Klä granen med en egenvirkad utsmyckelse 🎄🎄🎄" />
+    <Card number="21" content="Bygg en snölykta ❄️❄️❄️ / Gör varm choklad ☕☕☕" />
+    <Card number="1" content="Se ett avsnitt av julkalendern ☃️☃️☃️" />
     <Card number="22" content="Se en julfilm 🎞️🎞️🎞️" />
-    <Card number="23" content="TITTA I GRANEN 🌲🌲🌲" />
-    <Card number="24" content="TITTA I JULSTRUMPAN 🧦🧦🧦" />
+    <Card number="8" content="Ta en kopp glögg ☕☕☕" />
+    <Card number="14" content="Leta rätt på en julmarknad 🦌🦌🦌"/>
+    <Card number="24" content="NÄMEN TITTA I JULSTRUMPAN 🧦🧦🧦" />
+    <Card number="11" content="Dansa små grodorna med Tiny 🐸🐸🐸" />
+    <Card number="9" content="Köp en gran med boba 🌲🌲🌲" />
+    <Card number="13" content="Se ett luciatåg 🧝‍♀️🧝‍♀️🧝‍♀️" />
+    <Card number="23" content="NÄMEN TITTA I GRANEN 🌲🌲🌲" />
+    <Card number="15" content="Klä ut dig till tomte 🎅🎅🎅" />
+    <Card number="2" content="Baka en valfri julbak 🍪🍪🍪" />
+    <Card number="17" content="Grilla korv utomhus ❄️❄️❄️" />
+    <Card number="20" content="Julpyssla med boba 🎁🎁🎁" />
+    <Card number="6" content="Ge Tiny en julklapp 🎁🎁🎁" />
+    <Card number="3" content="Be boba laga en valfri maträtt till middag 🍽️🍽️🍽️" />
+    <Card number="19" content="Ta en chokladbit 🍫🍫🍫" />
   </div>
 </Layout>
 
 <style>
   audio,
-  .card-wrapper,
-  .snow-wrapper {
+  .card-wrapper{
     z-index: 1;
+  }
+
+  .snow-wrapper {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
   }
 
   .card-wrapper {
@@ -117,10 +100,25 @@ import Snowflake from "../components/Snowflake.astro";
   }
 </style>
 <script>
-  //document.addEventListener('mouseover', musicPlay);
+  /**
+  * Fire when DOM is ready
+  */
+  function domReady() {
+    document.addEventListener('click', musicPlay);
+  }
   
   function musicPlay() {
     document.getElementById('audio').play();
     document.removeEventListener('click', musicPlay);
   }
+
+  if (
+    document.readyState === 'complete' ||
+    document.readyState === 'interactive'
+  ) {
+    domReady();
+  } else {
+    document.addEventListener('DOMContentLoaded', domReady);
+  }
+
 </script>
