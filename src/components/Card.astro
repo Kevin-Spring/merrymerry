@@ -31,14 +31,20 @@ const { number, content } = Astro.props;
       });
 
       function trackClickedItem(card) {
-        card.classList.add("opened");
-        const cardID = card.id;
-        const clickedCards =
-          JSON.parse(localStorage.getItem("clickedCards")) || [];
+        const todaysDate = new Date().getDate();
 
-        if (clickedCards.length === 0 || !clickedCards.includes(cardID)) {
-          clickedCards.push(cardID);
-          localStorage.setItem("clickedCards", JSON.stringify(clickedCards));
+        if(todaysDate == card.id) {
+          card.classList.add("opened");
+          const cardID = card.id;
+          const clickedCards =
+            JSON.parse(localStorage.getItem("clickedCards")) || [];
+
+          if (clickedCards.length === 0 || !clickedCards.includes(cardID)) {
+            clickedCards.push(cardID);
+            localStorage.setItem("clickedCards", JSON.stringify(clickedCards));
+          }
+        } else {
+          alert("Hörrudu! Inge tissel & tassel! Här är vi inte än skuffo!");
         }
       }
 
@@ -74,6 +80,11 @@ const { number, content } = Astro.props;
     z-index: 1;
     perspective: 1000px;
     background-color: #044204;
+    overflow: hidden;
+  }
+
+  .card:hover {
+    animation: glow 1.8s ease-in-out infinite alternate;
   }
 
   .card[data-number="24"] {
