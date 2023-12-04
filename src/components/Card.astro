@@ -33,7 +33,7 @@ const { number, content } = Astro.props;
       function trackClickedItem(card) {
         const todaysDate = new Date().getDate();
 
-        if(todaysDate == card.id) {
+        if(todaysDate == card.id || todaysDate > card.id) {
           card.classList.add("opened");
           const cardID = card.id;
           const clickedCards =
