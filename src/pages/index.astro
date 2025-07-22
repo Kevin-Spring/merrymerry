@@ -2,67 +2,36 @@
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Snowflake from "../components/Snowflake.astro";
+import { Cards } from "../data/christmasCards.js";
 ---
 
 <Layout title="HOHOHOH HAPPYMERRYY!!!">
-	<audio id="audio" controls autoplay loop>
-  		<source src="/audio/songs.mp3" type="audio/mpeg">
-	</audio>
-
-  <div class="snow-wrapper">
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
-    <Snowflake />
+  <audio id="audio" controls preload="none" autoplay loop aria-label="Background holiday music">
+    <source src="/audio/songs.mp3" type="audio/mpeg">
+</audio>
+  
+  <div class="snow-wrapper" aria-hidden="true">
+    {Array(10).fill(0).map(() => <Snowflake />)}
   </div>
 
-  <div class="card-wrapper">
-    <Card number="7" content="Ge Flubb en julklapp 🎁🎁🎁" />
-    <Card number="16" content="Klä ut dig till tomte 🎅🎅🎅" />
-    <Card number="5" content="Nå rätt datum på adventsljuset 🕯️🕯️🕯️" />
-    <Card number="10" content="Få frukost på sängen 🍳🍳🍳" />
-    <Card number="18" content="Virka eller gör en julstrumpa med valfri metod 🧦🧦🧦" />
-    <Card number="4" content="Se ett avsnitt av julkalendern ☃️☃️☃️" />
-    <Card number="12" content="Be boba laga en valfri maträtt till middag 🍽️🍽️🍽️ " />
-    <Card number="21" content="Dekorera med valfritt julpynt🎄🎄🎄" />
-    <Card number="1" content="Bygg en snölykta ❄️❄️❄️" />
-    <Card number="22" content="Se en julfilm 🎞️🎞️🎞️" />
-    <Card number="8" content="Köp en gran med boba 🌲🌲🌲" />
-    <Card number="14" content="Klä granen med en egenvirkad utsmyckelse 🎄🎄🎄"/>
-    <Card number="24" content="NÄMEN TITTA I JULSTRUMPAN 🧦🧦🧦" />
-    <Card number="11" content="Dansa små grodorna med Tiny 🐸🐸🐸" />
-    <Card number="9" content="Leta rätt på en julmarknad 🦌🦌🦌" />
-    <Card number="13" content="Se ett luciatåg 🧝‍♀️🧝‍♀️🧝‍♀️" />
-    <Card number="23" content="NÄMEN TITTA I GRANEN 🌲🌲🌲" />
-    <Card number="15" content="Gör en julig drink 🍹🍹🍹" />
-    <Card number="2" content="Ta en kopp glögg ☕☕☕" />
-    <Card number="17" content="Baka en valfri julbak 🍪🍪🍪" />
-    <Card number="20" content="Julpyssla med boba 🎁🎁🎁" />
-    <Card number="6" content="Ge Tiny en julklapp 🎁🎁🎁" />
-    <Card number="3" content="Grilla korv utomhus ❄️❄️❄️" />
-    <Card number="19" content="Gör en kopp varm choklad 🍫🍫🍫" />
+  <div class="card-wrapper" role="list">
+    {Cards.map(({ number, content }) => (
+      <Card number={number} content={content} />
+    ))}
   </div>
 </Layout>
 
 <style>
   audio,
-  .card-wrapper{
+  .card-wrapper {
     z-index: 1;
   }
 
   .snow-wrapper {
     z-index: 2;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     pointer-events: none;
   }
 
@@ -71,54 +40,51 @@ import Snowflake from "../components/Snowflake.astro";
     display: grid;
     grid-template-columns: repeat(
       auto-fill,
-      minmax(max(180px, calc(15% - 20px)), 1fr)
+      minmax(max(180px, calc(15% - 1.25rem)), 1fr)
     );
-    gap: 20px;
-    padding: 40px;
-    border-radius: 4px;
+    gap: 1.25rem;
+    padding: 2.5rem;
+    border-radius: 0.25rem;
     background-image: url(/images/cat.jpeg);
     width: 100%;
-    max-width: min(1200px, 80vw);
+    max-width: min(75rem, 80vw);
     box-shadow:
-      0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-      0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-      0 12.5px 10px rgba(0, 0, 0, 0.06),
-      0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-      0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-      0 100px 80px rgba(0, 0, 0, 0.12);
-      overflow: hidden;
+      0 2.8px 2.2px rgba(0,0,0,0.034),
+      0 6.7px 5.3px rgba(0,0,0,0.048),
+      0 12.5px 10px rgba(0,0,0,0.06),
+      0 22.3px 17.9px rgba(0,0,0,0.072),
+      0 41.8px 33.4px rgba(0,0,0,0.086),
+      0 100px 80px rgba(0,0,0,0.12);
+    overflow: hidden;
   }
 
   .card-wrapper:after {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.2);
   }
 </style>
+
 <script>
-  /**
-  * Fire when DOM is ready
-  */
+  // Play music on first user interaction to avoid autoplay block
   function domReady() {
-    document.addEventListener('click', musicPlay);
-  }
-  
-  function musicPlay() {
-    document.getElementById('audio').play();
-    document.removeEventListener('click', musicPlay);
+    document.addEventListener("click", musicPlay, { once: true });
   }
 
-  if (
-    document.readyState === 'complete' ||
-    document.readyState === 'interactive'
-  ) {
+  function musicPlay() {
+    const audio = document.getElementById("audio");
+    if (audio) {
+      audio.play().catch(() => {
+        // Autoplay failed, silently ignore
+      });
+    }
+  }
+
+  if (document.readyState === "complete" || document.readyState === "interactive") {
     domReady();
   } else {
-    document.addEventListener('DOMContentLoaded', domReady);
+    document.addEventListener("DOMContentLoaded", domReady);
   }
-
 </script>

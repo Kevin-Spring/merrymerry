@@ -1,5 +1,4 @@
 ---
-import { string } from 'astro/zod';
 interface Props {
   number: string;
   content: string;
@@ -8,7 +7,9 @@ interface Props {
 const { number, content } = Astro.props;
 ---
 
-<christmas-card class="card" id={number} data-number={number}>
+<christmas-card class="card" id={number} data-number={number} role="button"
+tabindex="0"
+aria-label={`Open calendar card number ${number}`}>
   <div class="front">
     <h2 class="card-title">
       {number}
@@ -21,59 +22,10 @@ const { number, content } = Astro.props;
   </div>
 </christmas-card>
 
-<script>
-  class CardFlip extends HTMLElement {
-    constructor() {
-      super();
-
-      this.addEventListener("click", () => {
-        trackClickedItem(this);
-      });
-
-      function trackClickedItem(card) {
-        const todaysDate = new Date().getDate();
-
-        if(todaysDate == card.id || todaysDate > card.id) {
-          card.classList.add("opened");
-          const cardID = card.id;
-          const clickedCards =
-            JSON.parse(localStorage.getItem("clickedCards")) || [];
-
-          if (clickedCards.length === 0 || !clickedCards.includes(cardID)) {
-            clickedCards.push(cardID);
-            localStorage.setItem("clickedCards", JSON.stringify(clickedCards));
-          }
-        } else {
-          alert("Hörrudu! Inge tissel & tassel! Här är vi inte än skuffo!");
-        }
-      }
-
-      // Function to check if a card is clicked and apply CSS class
-      function rememberClickedCards() {
-        const clickedCards = JSON.parse(localStorage.getItem("clickedCards"));
-
-        if (clickedCards) {
-          clickedCards.forEach((card) => {
-            const cardElement = document.getElementById(card);
-
-            if (cardElement && !cardElement.classList.contains("opened")) {
-              cardElement.classList.add("opened");
-            }
-          });
-        }
-      }
-
-      // Call the function when the page loads
-      document.addEventListener("DOMContentLoaded", rememberClickedCards);
-    }
-  }
-  customElements.define("christmas-card", CardFlip);
-</script>
-
 <style>
   .card {
     border: 2px dashed #dbdbdb;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     display: block;
     aspect-ratio: 1/1;
     display: grid;

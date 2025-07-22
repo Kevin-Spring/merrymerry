@@ -1,57 +1,61 @@
-# Visit webpage at https://merryhoho.netlify.app
+# Holiday Card Project
 
+A lightweight, fun holiday card project built with Astro. This project displays a grid of interactive holiday-themed cards that can be flipped to reveal activities or messages.
 
-# Astro Starter Kit: Basics
+## Features
 
-```sh
-npm create astro@latest -- --template basics
+- Responsive grid layout of holiday cards
+- Click to flip cards and reveal content
+- Cards remember their state using `localStorage`
+- Snowflake animation for festive atmosphere
+- Background music with autoplay and loop
+- Light styling with hover effects and card flipping animations
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Kevin-Spring/merrymerry.git
+cd MERRYMERRY
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Install dependencies:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Run the development server:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+4. Open your browser at `http://localhost:3000` to see the app.
 
-## 🧞 Commands
+This project was built using Node v22.17.1 (npm v10.9.2), see if downloading those versions resolve the issue.
 
-All commands are run from the root of the project, from a terminal:
+## Usage
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- Click on a card to flip it and reveal its content.
+- Cards can only be opened if the current date is on or past the card number (to prevent cheating).
+- The state of opened cards persists on reload via localStorage.
+- Enjoy the background music and festive snow animation.
 
-## 👀 Want to learn more?
+## Project Structure
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `src/components` – Astro components such as `Card`, `Snowflake`, and `Layout`.
+- `public/scripts` – JavaScript files that handle card flipping logic.
+- `public/images` – Background images and assets.
+- `src/pages` – Astro pages like the main `index.astro`.
+
+## Customization
+
+- To change card content, modify the array of cards in `data/chistmasCard.js`.
+- Background music is located in `public/audio/songs.mp3`; replace with your own track if desired.
+- Snowflake count and animation speed can be adjusted in the `Snowflake` component.
+
+---
+
+Happy Holidays! 🎄🎅✨
